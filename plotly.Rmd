@@ -21,7 +21,7 @@ data("instacart")
 
 instacart1 = 
   instacart %>% 
-  select(order_id, product_id, user_id, order_dow, days_since_prior_order, product_name, aisle_id, aisle, department_id, department) %>% 
+  select(order_id, product_id, user_id, order_dow, order_hour_of_day, days_since_prior_order, product_name, aisle_id, aisle, department_id, department) %>% 
   sample_n(5000)
   
   
@@ -57,3 +57,12 @@ instacart1 %>%
 
 # Plot 2
 
+```{r}
+instacart1 %>% 
+  mutate(department = factor(department),
+         department = fct_reorder(department, order_hour_of_day)) %>% 
+  plot_ly(
+    x = ~department, y = ~order_hour_of_day, color = ~department, type = "box",
+    colors = "viridis"
+  )
+```
