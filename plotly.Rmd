@@ -29,6 +29,8 @@ instacart1 =
 
 # Plot 1
 
+A bar plot showing the number of aisles in each department.
+
 ```{r}
 instacart1 %>% 
   group_by(department) %>% 
@@ -43,7 +45,7 @@ instacart1 %>%
 
 **why cannot order department by number of aisles?**
 
-
+A bar plot showing the number of orders placed in each aisle.
 ```{r}
 instacart1 %>% 
   count(aisle) %>% 
@@ -56,6 +58,8 @@ instacart1 %>%
 ```
 
 # Plot 2
+
+A box plot showing the distribution of days since prior order by department.
 
 ```{r}
 instacart1 %>% 
