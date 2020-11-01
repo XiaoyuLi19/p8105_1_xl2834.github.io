@@ -30,6 +30,8 @@ Column {data-width=650}
 
 ### Chart A
 
+This bar plot shows the number of orders placed in each aisle.
+
 ```{r}
 instacart1 %>% 
   count(aisle) %>% 
@@ -46,6 +48,8 @@ Column {data-width=350}
 
 ### Chart B
 
+This box plot shows the distribution of days since prior order by department.
+
 ```{r}
 instacart1 %>% 
   mutate(department = factor(department),
@@ -57,6 +61,8 @@ instacart1 %>%
 ```
 
 ### Chart C
+
+This line plot shows the number of orders placed throughout the day by department. 
 
 ```{r}
 instacart1 %>% 
