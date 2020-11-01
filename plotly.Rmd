@@ -60,9 +60,25 @@ instacart1 %>%
 ```{r}
 instacart1 %>% 
   mutate(department = factor(department),
-         department = fct_reorder(department, order_hour_of_day)) %>% 
+         department = fct_reorder(department, days_since_prior_order)) %>% 
   plot_ly(
-    x = ~department, y = ~order_hour_of_day, color = ~department, type = "box",
+    x = ~department, y = ~days_since_prior_order, color = ~department, type = "box",
     colors = "viridis"
   )
 ```
+
+# Plot 3
+
+A line plot showing the number of orders placed throughout the day by department. 
+
+```{r}
+instacart1 %>% 
+  group_by(department) %>% 
+  count(order_hour_of_day) %>% 
+  plot_ly(
+    x = ~order_hour_of_day, y = ~n, color = ~department, type = "scatter",
+    mode = "lines", colors = "viridis"
+  )
+
+```
+
