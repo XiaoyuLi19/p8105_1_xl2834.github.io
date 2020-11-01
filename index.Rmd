@@ -7,8 +7,13 @@ output:
     theme: cerulean
 ---
 
-#### This is Xiaoyu's website
+# This is Xiaoyu's website
 
 Welcome to my personal site!
+
+#### Link to my resume
+
+[My resume](Resume.html)
+
 
 
