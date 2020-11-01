@@ -1,0 +1,59 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+
+# Loading data
+
+```{r}
+data("instacart")
+
+instacart1 = 
+  instacart %>% 
+  select(order_id, product_id, user_id, order_dow, days_since_prior_order, product_name, aisle_id, aisle, department_id, department) %>% 
+  sample_n(5000)
+  
+  
+```
+
+# Plot 1
+
+```{r}
+instacart1 %>% 
+  group_by(department) %>% 
+  count(aisle) %>% 
+  mutate(department = factor(department),
+         department = fct_reorder(department, n)) %>% 
+  plot_ly(
+    x = ~department, y = ~n, color = ~department, type = "bar",
+    colors = "viridis"
+  )
+```
+
+**why cannot order department by number of aisles?**
+
+
+```{r}
+instacart1 %>% 
+  count(aisle) %>% 
+  mutate(aisle = factor(aisle),
+         aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(
+    x = ~aisle, y = ~n, color = ~aisle, type = "bar",
+    colors = "viridis"
+  )
+```
+
+# Plot 2
+
