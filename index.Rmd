@@ -11,19 +11,20 @@ output:
 
 Welcome to my personal site!
 
-#### Link to my resume
+# Link to my resume
 
 [My resume](Resume.html)
 
-#### This is my email
+# This is my email
 
 xl2834@columbia.edu
 
-#### My github page
+# My github page
 
 [XiaoyuLi19](https://github.com/XiaoyuLi19)
 
-#### My linkedIn
+# My linkedIn
 
 [Connect with me on LinkedIn!](https://www.linkedin.com/in/xiaoyu-li-05812b196/)
 
+# Dashboards
